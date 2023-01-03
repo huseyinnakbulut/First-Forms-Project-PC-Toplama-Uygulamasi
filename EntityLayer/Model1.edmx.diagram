@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="01edb9446fbc411488a6221b23e307c7" Name="Diagram1">
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_City" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_CPU" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_Customer" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_Disk" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_Ekran" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_GPU" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_kasa" Width="1.5" PointX="3" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_Keyboard" Width="1.5" PointX="3" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_Kulaklık" Width="1.5" PointX="3" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_MotherBoard" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_mouse" Width="1.5" PointX="3" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_Order" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_PSU" Width="1.5" PointX="3" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_RAM" Width="1.5" PointX="3" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PcToplamaModel.tbl_Socket" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Customer_tbl_City" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_CPU_tbl_Socket" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_CPU" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_Disk" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_Ekran" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_GPU" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_kasa" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_Keyboard" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_Kulaklık" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_MotherBoard_tbl_Socket1" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_MotherBoard" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_mouse" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_PSU" ManuallyRouted="false" />
+        <AssociationConnector Association="PcToplamaModel.FK_tbl_Order_tbl_RAM" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

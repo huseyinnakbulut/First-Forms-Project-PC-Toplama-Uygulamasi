@@ -1,0 +1,1270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PcToplamaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="City Name" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="tbl_CPU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Model" Type="varchar" MaxLength="30" />
+          <Property Name="Seri" Type="varchar" MaxLength="30" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Stok" Type="int" />
+          <Property Name="Güç" Type="int" />
+          <Property Name="Soket Id" Type="int" />
+          <Property Name="Full Ad" Type="varchar" MaxLength="125" />
+          <Property Name="Hız" Type="varchar" MaxLength="20" />
+          <Property Name="Ön Bellek" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="tbl_Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="50" />
+          <Property Name="Soyad" Type="varchar" MaxLength="50" />
+          <Property Name="Telno" Type="varchar" MaxLength="11" />
+          <Property Name="Adres" Type="varchar" MaxLength="500" />
+          <Property Name="TC" Type="varchar" MaxLength="11" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="int" />
+          <Property Name="Doğum_Tarihi" Type="date" />
+          <Property Name="Username" Type="varchar" MaxLength="55" />
+          <Property Name="Password" Type="varchar" MaxLength="55" />
+          <Property Name="Admin/Customer" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_Disk">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SSD/Sabit Disk" Type="bit" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="GB" Type="int" />
+          <Property Name="Model" Type="varchar" MaxLength="30" />
+          <Property Name="Soket" Type="varchar" MaxLength="10" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Stok" Type="int" />
+          <Property Name="Full Ad" Type="varchar" MaxLength="125" />
+        </EntityType>
+        <EntityType Name="tbl_Ekran">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="Boyut" Type="varchar" MaxLength="20" />
+          <Property Name="Çözünürlük" Type="varchar" MaxLength="30" />
+          <Property Name="Tazeleme hızı" Type="varchar" MaxLength="10" />
+          <Property Name="HDR" Type="bit" />
+          <Property Name="Panel" Type="varchar" MaxLength="20" />
+          <Property Name="MS" Type="varchar" MaxLength="20" />
+          <Property Name="Display Port" Type="varchar" MaxLength="30" />
+          <Property Name="HDMI" Type="varchar" MaxLength="30" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Stok" Type="int" />
+          <Property Name="FullAD" Type="varchar" MaxLength="125" />
+        </EntityType>
+        <EntityType Name="tbl_GPU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Üretici" Type="varchar" MaxLength="50" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Seri" Type="varchar" MaxLength="30" />
+          <Property Name="Model" Type="varchar" MaxLength="30" />
+          <Property Name="Bellek Kapasitesi" Type="tinyint" />
+          <Property Name="Bit" Type="int" />
+          <Property Name="Soket" Type="varchar" MaxLength="15" />
+          <Property Name="Güç" Type="int" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Full Ad" Type="varchar" MaxLength="125" />
+          <Property Name="Stok" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_kasa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Model" Type="varchar" MaxLength="30" />
+          <Property Name="Tip" Type="varchar" MaxLength="30" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="USB sayısı" Type="tinyint" />
+          <Property Name="Full ad" Type="varchar" MaxLength="125" />
+          <Property Name="Stok" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Keyboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="Mekanik" Type="bit" />
+          <Property Name="RGB" Type="bit" />
+          <Property Name="Kablolu" Type="bit" />
+          <Property Name="Türkçe/İngilizce" Type="bit" />
+          <Property Name="Renk" Type="varchar" MaxLength="20" />
+          <Property Name="switch" Type="varchar" MaxLength="20" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="FullAd" Type="varchar" MaxLength="125" />
+          <Property Name="Stok" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Kulaklık">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Model" Type="varchar" MaxLength="30" />
+          <Property Name="Kablolu/Kablosuz" Type="bit" />
+          <Property Name="RGB" Type="bit" />
+          <Property Name="Renk" Type="varchar" MaxLength="20" />
+          <Property Name="Frekans Tepkisi" Type="varchar" MaxLength="50" />
+          <Property Name="Mikrofon var/yok" Type="bit" />
+          <Property Name="Ses Çıkışı" Type="varchar" MaxLength="30" />
+          <Property Name="Ses Kartı var/yok" Type="bit" />
+          <Property Name="Full Ad" Type="varchar" MaxLength="125" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Stok" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_MotherBoard">
+          <Key>
+            <PropertyRef Name="MB Id" />
+          </Key>
+          <Property Name="MB Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Model" Type="varchar" MaxLength="30" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Soket_Id" Type="int" />
+          <Property Name="Full Ad" Type="varchar" MaxLength="125" />
+          <Property Name="Yapı" Type="varchar" MaxLength="30" />
+          <Property Name="Bellek Tip" Type="varchar" MaxLength="30" />
+          <Property Name="Ram Slot sayısı" Type="tinyint" />
+          <Property Name="Stok" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_mouse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="DPI" Type="varchar" MaxLength="20" />
+          <Property Name="Tuş sayısı" Type="tinyint" />
+          <Property Name="Kablolu/kablosuz" Type="bit" />
+          <Property Name="RGB" Type="bit" />
+          <Property Name="Renk" Type="varchar" MaxLength="20" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="FullAd" Type="varchar" MaxLength="125" />
+          <Property Name="Stok" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer_ID" Type="int" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Cpu_Id" Type="int" />
+          <Property Name="MotherBoard_Id" Type="int" />
+          <Property Name="Ram_Id" Type="int" />
+          <Property Name="Powersup_Id" Type="int" />
+          <Property Name="GPU_Id" Type="int" />
+          <Property Name="Case_Id" Type="int" />
+          <Property Name="Keyboard_Id" Type="int" />
+          <Property Name="Mouse_Id" Type="int" />
+          <Property Name="Screen_Id" Type="int" />
+          <Property Name="Total_Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Kulaklık_Id" Type="int" />
+          <Property Name="Disk_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_PSU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Güc" Type="int" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Full Ad" Type="varchar" MaxLength="125" />
+          <Property Name="Verimlilik sertifikası" Type="varchar" MaxLength="30" />
+          <Property Name="Stok" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_RAM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" />
+          <Property Name="Toplam GB" Type="tinyint" />
+          <Property Name="Soket" Type="varchar" MaxLength="10" />
+          <Property Name="MHz" Type="int" />
+          <Property Name="Kit" Type="varchar" MaxLength="10" />
+          <Property Name="SAYI" Type="int" />
+          <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Full Ad" Type="varchar" MaxLength="125" />
+          <Property Name="Stok" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Socket">
+          <Key>
+            <PropertyRef Name="Soket Id" />
+          </Key>
+          <Property Name="Soket Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Soket Name" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_tbl_CPU_tbl_Socket">
+          <End Role="tbl_Socket" Type="Self.tbl_Socket" Multiplicity="0..1" />
+          <End Role="tbl_CPU" Type="Self.tbl_CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Socket">
+              <PropertyRef Name="Soket Id" />
+            </Principal>
+            <Dependent Role="tbl_CPU">
+              <PropertyRef Name="Soket Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Customer_tbl_City">
+          <End Role="tbl_City" Type="Self.tbl_City" Multiplicity="0..1" />
+          <End Role="tbl_Customer" Type="Self.tbl_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Customer">
+              <PropertyRef Name="City" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_MotherBoard_tbl_Socket1">
+          <End Role="tbl_Socket" Type="Self.tbl_Socket" Multiplicity="0..1" />
+          <End Role="tbl_MotherBoard" Type="Self.tbl_MotherBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Socket">
+              <PropertyRef Name="Soket Id" />
+            </Principal>
+            <Dependent Role="tbl_MotherBoard">
+              <PropertyRef Name="Soket_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_CPU">
+          <End Role="tbl_CPU" Type="Self.tbl_CPU" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CPU">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Cpu_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Customer">
+          <End Role="tbl_Customer" Type="Self.tbl_Customer" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Customer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Disk">
+          <End Role="tbl_Disk" Type="Self.tbl_Disk" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Disk">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Disk_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Ekran">
+          <End Role="tbl_Ekran" Type="Self.tbl_Ekran" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Ekran">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Screen_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_GPU">
+          <End Role="tbl_GPU" Type="Self.tbl_GPU" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_GPU">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="GPU_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_kasa">
+          <End Role="tbl_kasa" Type="Self.tbl_kasa" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_kasa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Case_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Keyboard">
+          <End Role="tbl_Keyboard" Type="Self.tbl_Keyboard" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Keyboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Keyboard_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Kulaklık">
+          <End Role="tbl_Kulaklık" Type="Self.tbl_Kulaklık" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Kulaklık">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Kulaklık_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_MotherBoard">
+          <End Role="tbl_MotherBoard" Type="Self.tbl_MotherBoard" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_MotherBoard">
+              <PropertyRef Name="MB Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="MotherBoard_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_mouse">
+          <End Role="tbl_mouse" Type="Self.tbl_mouse" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_mouse">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Mouse_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_PSU">
+          <End Role="tbl_PSU" Type="Self.tbl_PSU" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PSU">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Powersup_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_RAM">
+          <End Role="tbl_RAM" Type="Self.tbl_RAM" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_RAM">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Ram_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PcToplamaModelStoreContainer">
+          <EntitySet Name="tbl_City" EntityType="Self.tbl_City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_CPU" EntityType="Self.tbl_CPU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Disk" EntityType="Self.tbl_Disk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Ekran" EntityType="Self.tbl_Ekran" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_GPU" EntityType="Self.tbl_GPU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_kasa" EntityType="Self.tbl_kasa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Keyboard" EntityType="Self.tbl_Keyboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Kulaklık" EntityType="Self.tbl_Kulaklık" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_MotherBoard" EntityType="Self.tbl_MotherBoard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_mouse" EntityType="Self.tbl_mouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Order" EntityType="Self.tbl_Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PSU" EntityType="Self.tbl_PSU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_RAM" EntityType="Self.tbl_RAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Socket" EntityType="Self.tbl_Socket" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tbl_CPU_tbl_Socket" Association="Self.FK_tbl_CPU_tbl_Socket">
+            <End Role="tbl_Socket" EntitySet="tbl_Socket" />
+            <End Role="tbl_CPU" EntitySet="tbl_CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Customer_tbl_City" Association="Self.FK_tbl_Customer_tbl_City">
+            <End Role="tbl_City" EntitySet="tbl_City" />
+            <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_MotherBoard_tbl_Socket1" Association="Self.FK_tbl_MotherBoard_tbl_Socket1">
+            <End Role="tbl_Socket" EntitySet="tbl_Socket" />
+            <End Role="tbl_MotherBoard" EntitySet="tbl_MotherBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_CPU" Association="Self.FK_tbl_Order_tbl_CPU">
+            <End Role="tbl_CPU" EntitySet="tbl_CPU" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Customer" Association="Self.FK_tbl_Order_tbl_Customer">
+            <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Disk" Association="Self.FK_tbl_Order_tbl_Disk">
+            <End Role="tbl_Disk" EntitySet="tbl_Disk" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Ekran" Association="Self.FK_tbl_Order_tbl_Ekran">
+            <End Role="tbl_Ekran" EntitySet="tbl_Ekran" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_GPU" Association="Self.FK_tbl_Order_tbl_GPU">
+            <End Role="tbl_GPU" EntitySet="tbl_GPU" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_kasa" Association="Self.FK_tbl_Order_tbl_kasa">
+            <End Role="tbl_kasa" EntitySet="tbl_kasa" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Keyboard" Association="Self.FK_tbl_Order_tbl_Keyboard">
+            <End Role="tbl_Keyboard" EntitySet="tbl_Keyboard" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Kulaklık" Association="Self.FK_tbl_Order_tbl_Kulaklık">
+            <End Role="tbl_Kulaklık" EntitySet="tbl_Kulaklık" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_MotherBoard" Association="Self.FK_tbl_Order_tbl_MotherBoard">
+            <End Role="tbl_MotherBoard" EntitySet="tbl_MotherBoard" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_mouse" Association="Self.FK_tbl_Order_tbl_mouse">
+            <End Role="tbl_mouse" EntitySet="tbl_mouse" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_PSU" Association="Self.FK_tbl_Order_tbl_PSU">
+            <End Role="tbl_PSU" EntitySet="tbl_PSU" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_RAM" Association="Self.FK_tbl_Order_tbl_RAM">
+            <End Role="tbl_RAM" EntitySet="tbl_RAM" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PcToplamaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="City_Name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_Customer" Relationship="Self.FK_tbl_Customer_tbl_City" FromRole="tbl_City" ToRole="tbl_Customer" />
+        </EntityType>
+        <EntityType Name="tbl_CPU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Seri" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Stok" Type="Int32" />
+          <Property Name="Güç" Type="Int32" />
+          <Property Name="Soket_Id" Type="Int32" />
+          <Property Name="Full_Ad" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Hız" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Ön_Bellek" Type="Byte" />
+          <NavigationProperty Name="tbl_Socket" Relationship="Self.FK_tbl_CPU_tbl_Socket" FromRole="tbl_CPU" ToRole="tbl_Socket" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_CPU" FromRole="tbl_CPU" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telno" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="Int32" />
+          <Property Name="Doğum_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="Username" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="Admin_Customer" Type="Boolean" />
+          <NavigationProperty Name="tbl_City" Relationship="Self.FK_tbl_Customer_tbl_City" FromRole="tbl_Customer" ToRole="tbl_City" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_Customer" FromRole="tbl_Customer" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_Disk">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SSD_Sabit_Disk" Type="Boolean" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="GB" Type="Int32" />
+          <Property Name="Model" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Soket" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Stok" Type="Int32" />
+          <Property Name="Full_Ad" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_Disk" FromRole="tbl_Disk" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_Ekran">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Boyut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Çözünürlük" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Tazeleme_hızı" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="HDR" Type="Boolean" />
+          <Property Name="Panel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Display_Port" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HDMI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Stok" Type="Int32" />
+          <Property Name="FullAD" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_Ekran" FromRole="tbl_Ekran" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_GPU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Üretici" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Seri" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Bellek_Kapasitesi" Type="Byte" />
+          <Property Name="Bit" Type="Int32" />
+          <Property Name="Soket" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Güç" Type="Int32" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Full_Ad" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Stok" Type="Int32" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_GPU" FromRole="tbl_GPU" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_kasa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Tip" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="USB_sayısı" Type="Byte" />
+          <Property Name="Full_ad" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Stok" Type="Int32" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_kasa" FromRole="tbl_kasa" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_Keyboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mekanik" Type="Boolean" />
+          <Property Name="RGB" Type="Boolean" />
+          <Property Name="Kablolu" Type="Boolean" />
+          <Property Name="Türkçe_İngilizce" Type="Boolean" />
+          <Property Name="Renk" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="switch" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FullAd" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Stok" Type="Int32" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_Keyboard" FromRole="tbl_Keyboard" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_Kulaklık">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Kablolu_Kablosuz" Type="Boolean" />
+          <Property Name="RGB" Type="Boolean" />
+          <Property Name="Renk" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Frekans_Tepkisi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mikrofon_var_yok" Type="Boolean" />
+          <Property Name="Ses_Çıkışı" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Ses_Kartı_var_yok" Type="Boolean" />
+          <Property Name="Full_Ad" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Stok" Type="Int32" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_Kulaklık" FromRole="tbl_Kulaklık" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_MotherBoard">
+          <Key>
+            <PropertyRef Name="MB_Id" />
+          </Key>
+          <Property Name="MB_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Soket_Id" Type="Int32" />
+          <Property Name="Full_Ad" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Yapı" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Bellek_Tip" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Ram_Slot_sayısı" Type="Byte" />
+          <Property Name="Stok" Type="Int32" />
+          <NavigationProperty Name="tbl_Socket" Relationship="Self.FK_tbl_MotherBoard_tbl_Socket1" FromRole="tbl_MotherBoard" ToRole="tbl_Socket" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_MotherBoard" FromRole="tbl_MotherBoard" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_mouse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DPI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Tuş_sayısı" Type="Byte" />
+          <Property Name="Kablolu_kablosuz" Type="Boolean" />
+          <Property Name="RGB" Type="Boolean" />
+          <Property Name="Renk" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FullAd" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Stok" Type="Int32" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_mouse" FromRole="tbl_mouse" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_ID" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Cpu_Id" Type="Int32" />
+          <Property Name="MotherBoard_Id" Type="Int32" />
+          <Property Name="Ram_Id" Type="Int32" />
+          <Property Name="Powersup_Id" Type="Int32" />
+          <Property Name="GPU_Id" Type="Int32" />
+          <Property Name="Case_Id" Type="Int32" />
+          <Property Name="Keyboard_Id" Type="Int32" />
+          <Property Name="Mouse_Id" Type="Int32" />
+          <Property Name="Screen_Id" Type="Int32" />
+          <Property Name="Total_Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Kulaklık_Id" Type="Int32" />
+          <Property Name="Disk_Id" Type="Int32" />
+          <NavigationProperty Name="tbl_CPU" Relationship="Self.FK_tbl_Order_tbl_CPU" FromRole="tbl_Order" ToRole="tbl_CPU" />
+          <NavigationProperty Name="tbl_Customer" Relationship="Self.FK_tbl_Order_tbl_Customer" FromRole="tbl_Order" ToRole="tbl_Customer" />
+          <NavigationProperty Name="tbl_Disk" Relationship="Self.FK_tbl_Order_tbl_Disk" FromRole="tbl_Order" ToRole="tbl_Disk" />
+          <NavigationProperty Name="tbl_Ekran" Relationship="Self.FK_tbl_Order_tbl_Ekran" FromRole="tbl_Order" ToRole="tbl_Ekran" />
+          <NavigationProperty Name="tbl_GPU" Relationship="Self.FK_tbl_Order_tbl_GPU" FromRole="tbl_Order" ToRole="tbl_GPU" />
+          <NavigationProperty Name="tbl_kasa" Relationship="Self.FK_tbl_Order_tbl_kasa" FromRole="tbl_Order" ToRole="tbl_kasa" />
+          <NavigationProperty Name="tbl_Keyboard" Relationship="Self.FK_tbl_Order_tbl_Keyboard" FromRole="tbl_Order" ToRole="tbl_Keyboard" />
+          <NavigationProperty Name="tbl_Kulaklık" Relationship="Self.FK_tbl_Order_tbl_Kulaklık" FromRole="tbl_Order" ToRole="tbl_Kulaklık" />
+          <NavigationProperty Name="tbl_MotherBoard" Relationship="Self.FK_tbl_Order_tbl_MotherBoard" FromRole="tbl_Order" ToRole="tbl_MotherBoard" />
+          <NavigationProperty Name="tbl_mouse" Relationship="Self.FK_tbl_Order_tbl_mouse" FromRole="tbl_Order" ToRole="tbl_mouse" />
+          <NavigationProperty Name="tbl_PSU" Relationship="Self.FK_tbl_Order_tbl_PSU" FromRole="tbl_Order" ToRole="tbl_PSU" />
+          <NavigationProperty Name="tbl_RAM" Relationship="Self.FK_tbl_Order_tbl_RAM" FromRole="tbl_Order" ToRole="tbl_RAM" />
+        </EntityType>
+        <EntityType Name="tbl_PSU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Güc" Type="Int32" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Full_Ad" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Verimlilik_sertifikası" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Stok" Type="Int32" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_PSU" FromRole="tbl_PSU" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_RAM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Toplam_GB" Type="Byte" />
+          <Property Name="Soket" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MHz" Type="Int32" />
+          <Property Name="Kit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SAYI" Type="Int32" />
+          <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Full_Ad" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="Stok" Type="Int32" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_RAM" FromRole="tbl_RAM" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_Socket">
+          <Key>
+            <PropertyRef Name="Soket_Id" />
+          </Key>
+          <Property Name="Soket_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Soket_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_CPU" Relationship="Self.FK_tbl_CPU_tbl_Socket" FromRole="tbl_Socket" ToRole="tbl_CPU" />
+          <NavigationProperty Name="tbl_MotherBoard" Relationship="Self.FK_tbl_MotherBoard_tbl_Socket1" FromRole="tbl_Socket" ToRole="tbl_MotherBoard" />
+        </EntityType>
+        <Association Name="FK_tbl_Customer_tbl_City">
+          <End Role="tbl_City" Type="Self.tbl_City" Multiplicity="0..1" />
+          <End Role="tbl_Customer" Type="Self.tbl_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Customer">
+              <PropertyRef Name="City" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CPU_tbl_Socket">
+          <End Role="tbl_Socket" Type="Self.tbl_Socket" Multiplicity="0..1" />
+          <End Role="tbl_CPU" Type="Self.tbl_CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Socket">
+              <PropertyRef Name="Soket_Id" />
+            </Principal>
+            <Dependent Role="tbl_CPU">
+              <PropertyRef Name="Soket_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_CPU">
+          <End Role="tbl_CPU" Type="Self.tbl_CPU" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CPU">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Cpu_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Customer">
+          <End Role="tbl_Customer" Type="Self.tbl_Customer" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Customer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Disk">
+          <End Role="tbl_Disk" Type="Self.tbl_Disk" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Disk">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Disk_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Ekran">
+          <End Role="tbl_Ekran" Type="Self.tbl_Ekran" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Ekran">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Screen_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_GPU">
+          <End Role="tbl_GPU" Type="Self.tbl_GPU" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_GPU">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="GPU_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_kasa">
+          <End Role="tbl_kasa" Type="Self.tbl_kasa" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_kasa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Case_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Keyboard">
+          <End Role="tbl_Keyboard" Type="Self.tbl_Keyboard" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Keyboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Keyboard_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_Kulaklık">
+          <End Role="tbl_Kulaklık" Type="Self.tbl_Kulaklık" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Kulaklık">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Kulaklık_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_MotherBoard_tbl_Socket1">
+          <End Role="tbl_Socket" Type="Self.tbl_Socket" Multiplicity="0..1" />
+          <End Role="tbl_MotherBoard" Type="Self.tbl_MotherBoard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Socket">
+              <PropertyRef Name="Soket_Id" />
+            </Principal>
+            <Dependent Role="tbl_MotherBoard">
+              <PropertyRef Name="Soket_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_MotherBoard">
+          <End Role="tbl_MotherBoard" Type="Self.tbl_MotherBoard" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_MotherBoard">
+              <PropertyRef Name="MB_Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="MotherBoard_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_mouse">
+          <End Role="tbl_mouse" Type="Self.tbl_mouse" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_mouse">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Mouse_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_PSU">
+          <End Role="tbl_PSU" Type="Self.tbl_PSU" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PSU">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Powersup_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_RAM">
+          <End Role="tbl_RAM" Type="Self.tbl_RAM" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_RAM">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="Ram_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PcToplamaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_City" EntityType="Self.tbl_City" />
+          <EntitySet Name="tbl_CPU" EntityType="Self.tbl_CPU" />
+          <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" />
+          <EntitySet Name="tbl_Disk" EntityType="Self.tbl_Disk" />
+          <EntitySet Name="tbl_Ekran" EntityType="Self.tbl_Ekran" />
+          <EntitySet Name="tbl_GPU" EntityType="Self.tbl_GPU" />
+          <EntitySet Name="tbl_kasa" EntityType="Self.tbl_kasa" />
+          <EntitySet Name="tbl_Keyboard" EntityType="Self.tbl_Keyboard" />
+          <EntitySet Name="tbl_Kulaklık" EntityType="Self.tbl_Kulaklık" />
+          <EntitySet Name="tbl_MotherBoard" EntityType="Self.tbl_MotherBoard" />
+          <EntitySet Name="tbl_mouse" EntityType="Self.tbl_mouse" />
+          <EntitySet Name="tbl_Order" EntityType="Self.tbl_Order" />
+          <EntitySet Name="tbl_PSU" EntityType="Self.tbl_PSU" />
+          <EntitySet Name="tbl_RAM" EntityType="Self.tbl_RAM" />
+          <EntitySet Name="tbl_Socket" EntityType="Self.tbl_Socket" />
+          <AssociationSet Name="FK_tbl_Customer_tbl_City" Association="Self.FK_tbl_Customer_tbl_City">
+            <End Role="tbl_City" EntitySet="tbl_City" />
+            <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CPU_tbl_Socket" Association="Self.FK_tbl_CPU_tbl_Socket">
+            <End Role="tbl_Socket" EntitySet="tbl_Socket" />
+            <End Role="tbl_CPU" EntitySet="tbl_CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_CPU" Association="Self.FK_tbl_Order_tbl_CPU">
+            <End Role="tbl_CPU" EntitySet="tbl_CPU" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Customer" Association="Self.FK_tbl_Order_tbl_Customer">
+            <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Disk" Association="Self.FK_tbl_Order_tbl_Disk">
+            <End Role="tbl_Disk" EntitySet="tbl_Disk" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Ekran" Association="Self.FK_tbl_Order_tbl_Ekran">
+            <End Role="tbl_Ekran" EntitySet="tbl_Ekran" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_GPU" Association="Self.FK_tbl_Order_tbl_GPU">
+            <End Role="tbl_GPU" EntitySet="tbl_GPU" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_kasa" Association="Self.FK_tbl_Order_tbl_kasa">
+            <End Role="tbl_kasa" EntitySet="tbl_kasa" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Keyboard" Association="Self.FK_tbl_Order_tbl_Keyboard">
+            <End Role="tbl_Keyboard" EntitySet="tbl_Keyboard" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_Kulaklık" Association="Self.FK_tbl_Order_tbl_Kulaklık">
+            <End Role="tbl_Kulaklık" EntitySet="tbl_Kulaklık" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_MotherBoard_tbl_Socket1" Association="Self.FK_tbl_MotherBoard_tbl_Socket1">
+            <End Role="tbl_Socket" EntitySet="tbl_Socket" />
+            <End Role="tbl_MotherBoard" EntitySet="tbl_MotherBoard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_MotherBoard" Association="Self.FK_tbl_Order_tbl_MotherBoard">
+            <End Role="tbl_MotherBoard" EntitySet="tbl_MotherBoard" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_mouse" Association="Self.FK_tbl_Order_tbl_mouse">
+            <End Role="tbl_mouse" EntitySet="tbl_mouse" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_PSU" Association="Self.FK_tbl_Order_tbl_PSU">
+            <End Role="tbl_PSU" EntitySet="tbl_PSU" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_RAM" Association="Self.FK_tbl_Order_tbl_RAM">
+            <End Role="tbl_RAM" EntitySet="tbl_RAM" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PcToplamaModelStoreContainer" CdmEntityContainer="PcToplamaEntities">
+          <EntitySetMapping Name="tbl_City">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_City">
+              <MappingFragment StoreEntitySet="tbl_City">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="City_Name" ColumnName="City Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CPU">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_CPU">
+              <MappingFragment StoreEntitySet="tbl_CPU">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Seri" ColumnName="Seri" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+                <ScalarProperty Name="Güç" ColumnName="Güç" />
+                <ScalarProperty Name="Soket_Id" ColumnName="Soket Id" />
+                <ScalarProperty Name="Full_Ad" ColumnName="Full Ad" />
+                <ScalarProperty Name="Hız" ColumnName="Hız" />
+                <ScalarProperty Name="Ön_Bellek" ColumnName="Ön Bellek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Customer">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_Customer">
+              <MappingFragment StoreEntitySet="tbl_Customer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Telno" ColumnName="Telno" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Doğum_Tarihi" ColumnName="Doğum_Tarihi" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Admin_Customer" ColumnName="Admin/Customer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Disk">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_Disk">
+              <MappingFragment StoreEntitySet="tbl_Disk">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SSD_Sabit_Disk" ColumnName="SSD/Sabit Disk" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="GB" ColumnName="GB" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Soket" ColumnName="Soket" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+                <ScalarProperty Name="Full_Ad" ColumnName="Full Ad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Ekran">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_Ekran">
+              <MappingFragment StoreEntitySet="tbl_Ekran">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Boyut" ColumnName="Boyut" />
+                <ScalarProperty Name="Çözünürlük" ColumnName="Çözünürlük" />
+                <ScalarProperty Name="Tazeleme_hızı" ColumnName="Tazeleme hızı" />
+                <ScalarProperty Name="HDR" ColumnName="HDR" />
+                <ScalarProperty Name="Panel" ColumnName="Panel" />
+                <ScalarProperty Name="MS" ColumnName="MS" />
+                <ScalarProperty Name="Display_Port" ColumnName="Display Port" />
+                <ScalarProperty Name="HDMI" ColumnName="HDMI" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+                <ScalarProperty Name="FullAD" ColumnName="FullAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_GPU">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_GPU">
+              <MappingFragment StoreEntitySet="tbl_GPU">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Üretici" ColumnName="Üretici" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Seri" ColumnName="Seri" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Bellek_Kapasitesi" ColumnName="Bellek Kapasitesi" />
+                <ScalarProperty Name="Bit" ColumnName="Bit" />
+                <ScalarProperty Name="Soket" ColumnName="Soket" />
+                <ScalarProperty Name="Güç" ColumnName="Güç" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Full_Ad" ColumnName="Full Ad" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_kasa">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_kasa">
+              <MappingFragment StoreEntitySet="tbl_kasa">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="USB_sayısı" ColumnName="USB sayısı" />
+                <ScalarProperty Name="Full_ad" ColumnName="Full ad" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Keyboard">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_Keyboard">
+              <MappingFragment StoreEntitySet="tbl_Keyboard">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Mekanik" ColumnName="Mekanik" />
+                <ScalarProperty Name="RGB" ColumnName="RGB" />
+                <ScalarProperty Name="Kablolu" ColumnName="Kablolu" />
+                <ScalarProperty Name="Türkçe_İngilizce" ColumnName="Türkçe/İngilizce" />
+                <ScalarProperty Name="Renk" ColumnName="Renk" />
+                <ScalarProperty Name="switch" ColumnName="switch" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="FullAd" ColumnName="FullAd" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Kulaklık">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_Kulaklık">
+              <MappingFragment StoreEntitySet="tbl_Kulaklık">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Kablolu_Kablosuz" ColumnName="Kablolu/Kablosuz" />
+                <ScalarProperty Name="RGB" ColumnName="RGB" />
+                <ScalarProperty Name="Renk" ColumnName="Renk" />
+                <ScalarProperty Name="Frekans_Tepkisi" ColumnName="Frekans Tepkisi" />
+                <ScalarProperty Name="Mikrofon_var_yok" ColumnName="Mikrofon var/yok" />
+                <ScalarProperty Name="Ses_Çıkışı" ColumnName="Ses Çıkışı" />
+                <ScalarProperty Name="Ses_Kartı_var_yok" ColumnName="Ses Kartı var/yok" />
+                <ScalarProperty Name="Full_Ad" ColumnName="Full Ad" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_MotherBoard">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_MotherBoard">
+              <MappingFragment StoreEntitySet="tbl_MotherBoard">
+                <ScalarProperty Name="MB_Id" ColumnName="MB Id" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Soket_Id" ColumnName="Soket_Id" />
+                <ScalarProperty Name="Full_Ad" ColumnName="Full Ad" />
+                <ScalarProperty Name="Yapı" ColumnName="Yapı" />
+                <ScalarProperty Name="Bellek_Tip" ColumnName="Bellek Tip" />
+                <ScalarProperty Name="Ram_Slot_sayısı" ColumnName="Ram Slot sayısı" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_mouse">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_mouse">
+              <MappingFragment StoreEntitySet="tbl_mouse">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="DPI" ColumnName="DPI" />
+                <ScalarProperty Name="Tuş_sayısı" ColumnName="Tuş sayısı" />
+                <ScalarProperty Name="Kablolu_kablosuz" ColumnName="Kablolu/kablosuz" />
+                <ScalarProperty Name="RGB" ColumnName="RGB" />
+                <ScalarProperty Name="Renk" ColumnName="Renk" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="FullAd" ColumnName="FullAd" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Order">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_Order">
+              <MappingFragment StoreEntitySet="tbl_Order">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Cpu_Id" ColumnName="Cpu_Id" />
+                <ScalarProperty Name="MotherBoard_Id" ColumnName="MotherBoard_Id" />
+                <ScalarProperty Name="Ram_Id" ColumnName="Ram_Id" />
+                <ScalarProperty Name="Powersup_Id" ColumnName="Powersup_Id" />
+                <ScalarProperty Name="GPU_Id" ColumnName="GPU_Id" />
+                <ScalarProperty Name="Case_Id" ColumnName="Case_Id" />
+                <ScalarProperty Name="Keyboard_Id" ColumnName="Keyboard_Id" />
+                <ScalarProperty Name="Mouse_Id" ColumnName="Mouse_Id" />
+                <ScalarProperty Name="Screen_Id" ColumnName="Screen_Id" />
+                <ScalarProperty Name="Total_Price" ColumnName="Total_Price" />
+                <ScalarProperty Name="Kulaklık_Id" ColumnName="Kulaklık_Id" />
+                <ScalarProperty Name="Disk_Id" ColumnName="Disk_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PSU">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_PSU">
+              <MappingFragment StoreEntitySet="tbl_PSU">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Güc" ColumnName="Güc" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Full_Ad" ColumnName="Full Ad" />
+                <ScalarProperty Name="Verimlilik_sertifikası" ColumnName="Verimlilik sertifikası" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_RAM">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_RAM">
+              <MappingFragment StoreEntitySet="tbl_RAM">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Toplam_GB" ColumnName="Toplam GB" />
+                <ScalarProperty Name="Soket" ColumnName="Soket" />
+                <ScalarProperty Name="MHz" ColumnName="MHz" />
+                <ScalarProperty Name="Kit" ColumnName="Kit" />
+                <ScalarProperty Name="SAYI" ColumnName="SAYI" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Full_Ad" ColumnName="Full Ad" />
+                <ScalarProperty Name="Stok" ColumnName="Stok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Socket">
+            <EntityTypeMapping TypeName="PcToplamaModel.tbl_Socket">
+              <MappingFragment StoreEntitySet="tbl_Socket">
+                <ScalarProperty Name="Soket_Id" ColumnName="Soket Id" />
+                <ScalarProperty Name="Soket_Name" ColumnName="Soket Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

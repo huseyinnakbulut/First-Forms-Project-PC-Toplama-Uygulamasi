@@ -1,0 +1,6 @@
+her bir form içerisinde Listele metodunun içerisinde pictureboxlara combobox'da seçilen ürünün resimleri gelmektedir
+bu sebepden ötürü dosya yollarında bir hata oluşabilir programı çalıştırmadan önce lütfen dosya yollarını kontrol ediniz.
+
+Tüm formlarda yazılan kodun genel olarak açıklamalarıyla bulunduğu form CPUForm'dur.
+Arka planında kodların yanında veya altında açıklamaları yazılmıştır.
+Hüseyin Akbulut
